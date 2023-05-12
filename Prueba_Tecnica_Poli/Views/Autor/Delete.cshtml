@@ -1,0 +1,59 @@
+﻿@model Prueba_Tecnica_Poli.Models.Autor
+
+@{
+    ViewData["Title"] = "Eliminar Autor";
+}
+
+<div class="container m-4 p-4">
+    <div class="card p-4">
+        <div class="card-title text-center">
+            <h1 class="text-info">Eliminar un Autor</h1>
+            <hr />
+        </div>
+        <div class="card-body">
+            <p>
+                <a asp-action="Index" class="btn btn-danger"><img width="30" height="30" src="https://img.icons8.com/sf-black-filled/64/back.png" alt="back" /> Atrás</a>
+            </p>
+            <h3>¿Está seguro que desea eliminar este Autor?</h3>
+            <div class="row px-5">
+                <dl class="row mt-4">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Apellido)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.NumDocto)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.NumDocto)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.FecNacimiento)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.FecNacimiento)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.IdTipoDoctoNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.IdTipoDoctoNavigation.Nombre)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="IdAutor" />
+                    <input type="submit" value="Eliminar" class="btn btn-danger" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

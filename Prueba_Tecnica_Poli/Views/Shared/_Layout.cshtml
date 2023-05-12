@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Prueba Poli</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Prueba_Tecnica_Poli.styles.css" asp-append-version="true" />
+    <!--Link a cdn de Bootstrap (bootswatch)-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #1fb2de;">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img class="bg-white" src="https://www.poli.edu.co/sites/default/files/logos/politecnico-grancolombiano_2.svg" width="200" height="50" alt="Politécnico Grancolombiano"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item mr-3">
+                            <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Home" asp-action="Index"><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/home.png" alt="Home" /></a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Autor" asp-action="Index">Autores</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Libro" asp-action="Index">Libros</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <a class="btn btn-outline-primary rounded-pill" asp-area="" asp-controller="Home" asp-action="Privacy">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Prueba Técnica Poli - Jonathan Borda - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

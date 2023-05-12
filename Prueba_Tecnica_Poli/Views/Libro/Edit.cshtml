@@ -1,0 +1,62 @@
+﻿@model Prueba_Tecnica_Poli.Models.Libro
+
+@{
+    ViewData["Title"] = "Editar Libro";
+}
+
+<div class="container m-4 p-4">
+    <div class="card p-4">
+        <div class="card-title text-center">
+            <h1 class="text-info">Editar un Libro</h1>
+            <hr />
+        </div>
+        <div class="card-body">
+            <p>
+                <a asp-action="Index" class="btn btn-danger"><img width="30" height="30" src="https://img.icons8.com/sf-black-filled/64/back.png" alt="back" /> Atrás</a>
+            </p>
+            <div class="row px-5">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdLibro" />
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="Titulo" class="control-label"></label>
+                            <input asp-for="Titulo" class="form-control" />
+                            <span asp-validation-for="Titulo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="IdEditorial" class="control-label"></label>
+                            <select asp-for="IdEditorial" class="form-control" asp-items="ViewBag.IdEditorial"></select>
+                            <span asp-validation-for="IdEditorial" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="NumPaginas" class="control-label"></label>
+                            <input asp-for="NumPaginas" class="form-control" />
+                            <span asp-validation-for="NumPaginas" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="FecPublicacion" class="control-label"></label>
+                            <input asp-for="FecPublicacion" class="form-control" />
+                            <span asp-validation-for="FecPublicacion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="IdAutor" class="control-label"></label>
+                            <select asp-for="IdAutor" class="form-control" asp-items="ViewBag.IdAutor"></select>
+                            <span asp-validation-for="IdAutor" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-block btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

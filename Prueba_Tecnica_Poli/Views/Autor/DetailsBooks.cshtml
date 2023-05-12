@@ -1,0 +1,28 @@
+﻿
+@model List<Libro>
+
+@{
+    ViewData["Title"] = "Libros del Autor";
+}
+
+<div class="container m-4 p-4">
+    <div class="card p-4">
+        <div class="card-title text-center">
+            <h1 class="text-info">Libros escritos por el Autor</h1>
+            <hr />
+        </div>
+        <div class="card-body">
+            <p>
+                <a asp-action="Index" class="btn btn-danger"><img width="30" height="30" src="https://img.icons8.com/sf-black-filled/64/back.png" alt="back" /> Atrás</a>
+            </p>
+            <div class="row px-5">
+               <dl class="row">     
+                   @foreach (var libro in Model)
+                   {
+                        <p>@libro.Titulo</p>
+                   }
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

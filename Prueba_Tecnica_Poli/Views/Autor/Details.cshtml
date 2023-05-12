@@ -1,0 +1,60 @@
+﻿@model Prueba_Tecnica_Poli.Models.Autor
+
+@{
+    ViewData["Title"] = "Detalles Autor";
+}
+
+<div class="container m-4 p-4">
+    <div class="card p-4">
+        <div class="card-title text-center">
+            <h1 class="text-info">Detalles de Autor</h1>
+            <hr />
+        </div>
+        <div class="card-body">
+            <p>
+                <a asp-action="Index" class="btn btn-danger"><img width="30" height="30" src="https://img.icons8.com/sf-black-filled/64/back.png" alt="back" /> Atrás</a>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.IdAutor">Editar</a>
+            </p>
+            <div class="row px-5">
+               <dl class="row">
+                    <dt class = "col-sm-2 bg-warning">
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </dt>
+                    <dd class="col-sm-10 bg-warning">
+                        @Html.DisplayFor(model => model.Apellido)
+                    </dd>
+                    <dt class="col-sm-2 bg-warning">
+                        @Html.DisplayNameFor(model => model.NumDocto)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.NumDocto)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.FecNacimiento)
+                    </dt>
+                    <dd class="col-sm-10 bg-warning">
+                        @Html.DisplayFor(model => model.FecNacimiento)
+                    </dd>
+                    <dt class="col-sm-2 bg-warning">
+                        @Html.DisplayNameFor(model => model.IdTipoDoctoNavigation)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.IdTipoDoctoNavigation.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Libros)
+                    </dt>
+                    <dd class="col-sm-10">
+                        <a asp-action="DetailsBooks" class="btn btn-warning" asp-route-id="@Model?.IdAutor">Ver</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
